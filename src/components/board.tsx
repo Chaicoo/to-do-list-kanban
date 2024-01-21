@@ -186,7 +186,8 @@ export function KanbanBoard() {
               <BoardColumn
                 column={col}
                 tasks={tasks.filter((task) => task.columnId === col.id)}
-                onAddTask={handleAddTask}               
+                onAddTask={handleAddTask}
+                onDeleteTask={handleDeleteTask}               
               />
             </div>
           ))}
@@ -221,6 +222,10 @@ export function KanbanBoard() {
         content: newTask.title,
       },
     ]);
+  }
+
+  function handleDeleteTask(taskId) {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   }
 
   function onDragStart(event: DragStartEvent) {

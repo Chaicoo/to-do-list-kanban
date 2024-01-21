@@ -7,6 +7,9 @@ import { cva } from "class-variance-authority";
 import { GripVertical } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { ColumnId } from "./board";
+import { Trash } from "lucide-react";
+import { useState } from "react";
+import { DeleteConfirmationDialog } from "./task-delete-confirm";
 
 export interface Task {
   id: UniqueIdentifier;
@@ -26,7 +29,22 @@ export interface TaskDragData {
   task: Task;
 }
 
-export function TaskCard({ task, isOverlay }: TaskCardProps) {
+export function TaskCard({ task, isOverlay, onDeleteTask }: TaskCardProps) {
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+
+  const handleDeleteClick = () => {
+    setIsDeleteDialogOpen(true);
+  };
+
+  const handleConfirmDelete = () => {
+    onDeleteTask(task.id);
+    setIsDeleteDialogOpen(false);
+  };
+
+  const handleCancelDelete = () => {
+    setIsDeleteDialogOpen(false);
+  };
+
   const {
     setNodeRef,
     attributes,
@@ -67,16 +85,20 @@ export function TaskCard({ task, isOverlay }: TaskCardProps) {
         dragging: isOverlay ? "overlay" : isDragging ? "over" : undefined,
       })}
     >
-      <CardHeader className="px-3 py-3 space-between flex flex-row border-b-2 border-secondary relative">
+      <CardHeader className="px-3 py-2 space-between flex flex-row border-b-2 border-secondary relative">
         <Button
           variant={"ghost"}
           {...attributes}
           {...listeners}
           className="p-1 text-secondary-foreground/50 -ml-2 h-auto cursor-grab"
         >
-          <span className="sr-only">Move task</span>
           <GripVertical />
         </Button>
+        <DeleteConfirmationDialog
+          isOpen={isDeleteDialogOpen}
+          onClose={handleCancelDelete}
+          onConfirm={handleConfirmDelete}
+        />
         <Badge variant={"outline"} className="ml-auto font-semibold">
           Task
         </Badge>
