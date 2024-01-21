@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 
 import { BoardColumn, BoardContainer } from "./board-column";
@@ -21,7 +21,6 @@ import { type Task, TaskCard } from "./task-card";
 import type { Column } from "./board-column";
 import { hasDraggableData } from "./utils";
 import { coordinateGetter } from "./multiple-containers-keyboard-preset";
-import { TaskAddForm } from "./task-add-form";
 
 const defaultCols = [
   {
@@ -55,10 +54,12 @@ export function KanbanBoard() {
   const pickedUpTaskColumn = useRef<ColumnId | null>(null);
   const columnsId = useMemo(() => columns.map((col) => col.id), [columns]);
 
-  const [tasks, setTasks] = useState<Task[]>(initialTasks);
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const storedTasks = localStorage.getItem("kanbanTasks");
+    return storedTasks ? JSON.parse(storedTasks) : initialTasks;
+  });
 
   const [activeColumn, setActiveColumn] = useState<Column | null>(null);
-
   const [activeTask, setActiveTask] = useState<Task | null>(null);
 
   const sensors = useSensors(
@@ -68,6 +69,10 @@ export function KanbanBoard() {
       coordinateGetter: coordinateGetter,
     })
   );
+
+  useEffect(() => {
+    localStorage.setItem("kanbanTasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function getDraggingTaskData(taskId: UniqueIdentifier, columnId: ColumnId) {
     const tasksInColumn = tasks.filter((task) => task.columnId === columnId);
