@@ -14,8 +14,8 @@
 <h2 id="layout">🎨 Layout</h2>
 
 <p align="center">
-    <img src="../.github/example.png" alt="Image Example" width="400px">
-    <img src="../.github/example.png" alt="Image Example" width="400px">
+    <img src="https://github.com/Chaicoo/to-do-list-kanban/blob/main/public/screenshot_1.png" alt="Image Example" width="400px">
+    <img src="https://github.com/Chaicoo/to-do-list-kanban/blob/main/public/screenshot_2.png" alt="Image Example" width="400px">
 </p>
 
 <h2 id="technologies">💻 Technologies</h2>
