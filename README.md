@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" style="font-weight: bold;">To-do list Kanban 💻</h1>
 
-## Getting Started
+<p align="center">
+ <a href="#technologies">Technologies</a> • 
+ <a href="#started">Getting Started</a> • 
+ <a href="#contribute">Contribute</a>
+</p>
 
-First, run the development server:
+<p align="center">
+    <b>Application of a task list in the Kanban model. The project was built based on the <a href="https://github.com/Georgegriff/react-dnd-kit-tailwind-shadcn-ui">Drag and drop Accessible kanban board</a> project by authors <a href="https://github.com/skdishansachin">@Dishan Sachin
+</a> and <a href="https://github.com/Georgegriff">@George Griffiths</a>, which implements the basic logic of dragging cards and columns from the list.</b>
+</p>
+
+<h2 id="layout">🎨 Layout</h2>
+
+<p align="center">
+    <img src="../.github/example.png" alt="Image Example" width="400px">
+    <img src="../.github/example.png" alt="Image Example" width="400px">
+</p>
+
+<h2 id="technologies">💻 Technologies</h2>
+
+- Nextjs
+- TailWindCss
+- ShadCn/UI
+  
+<h2 id="started">🚀 Getting started</h2>
+
+Here you describe how to run your project locally
+
+<h3>Prerequisites</h3>
+
+
+- [NodeJS](https://nodejs.org/en)
+- [Git](https://git-scm.com/)
+
+<h3>Cloning</h3>
+
+How to clone your project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone your-project-url-in-github
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h3>Starting</h3>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+How to start your project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+cd project-name
+npm some-command-to-run
+```
 
-## Learn More
+<h2 id="colab">🤝 Collaborators</h2>
 
-To learn more about Next.js, take a look at the following resources:
+Special thank you for all people that contributed for this project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/61896274?v=4" width="100px;" alt="Fernanda Kipper Profile Picture"/><br>
+        <sub>
+          <b>Fernanda Kipper</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://t.ctcdn.com.br/n7eZ74KAcU3iYwnQ89-ul9txVxc=/400x400/smart/filters:format(webp)/i490769.jpeg" width="100px;" alt="Elon Musk Picture"/><br>
+        <sub>
+          <b>Elon Musk</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
+        <sub>
+          <b>Steve Jobs</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<h2 id="contribute">📫 Contribute</h2>
 
-## Deploy on Vercel
+Here you will explain how other developers can contribute to your project. For example, explaining how can create their branches, which patterns to follow and how to open an pull request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. `git clone https://github.com/Fernanda-Kipper/text-editor.git`
+2. `git checkout -b feature/NAME`
+3. Follow commit patterns
+4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<h3>Documentations that might help</h3>
+
+[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
+
+[💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
