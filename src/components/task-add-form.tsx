@@ -4,11 +4,14 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { PlusIcon } from "lucide-react";
+import { ToggleTags } from "./togle-tags";
 
 export function TaskAddForm({ onAddTask }) {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedTags, setSelectedTags] = useState([]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,10 +19,12 @@ export function TaskAddForm({ onAddTask }) {
     onAddTask({
       title: taskTitle,
       description: taskDescription,
+      tags: selectedTags,
     });
 
     setTaskTitle("");
     setTaskDescription("");
+    setSelectedTags([]);
     closeDialog();
   };
 
@@ -61,6 +66,9 @@ export function TaskAddForm({ onAddTask }) {
                   onChange={(e) => setTaskTitle(e.target.value)}
                   className="col-span-3"
                 />
+              </div>
+              <div>
+                <ToggleTags onTagsChange={setSelectedTags} />
               </div>
             </div>
             <DialogFooter>

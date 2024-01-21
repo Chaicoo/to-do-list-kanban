@@ -221,6 +221,7 @@ export function KanbanBoard() {
         id: `task${prevTasks.length + 1}`,
         columnId,
         content: newTask.title,
+        tags: newTask.tags,
       },
     ]);
   }
