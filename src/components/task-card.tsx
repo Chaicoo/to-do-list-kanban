@@ -11,6 +11,7 @@ import { Trash } from "lucide-react";
 import { useState } from "react";
 import { DeleteConfirmationDialog } from "./task-delete-confirm";
 import { DeliveryConfirmationDialog } from "./task-delivery-confirm";
+import { TaskTimer } from "./timer-task";
 
 export interface Task {
   id: UniqueIdentifier;
@@ -116,6 +117,7 @@ export function TaskCard({ task, isOverlay, onDeleteTask, onDeliverTask }: TaskC
           onClose={handleCancelDialogs}
           onConfirm={handleConfirmDeliver}
         />
+        <TaskTimer taskId={task.id} />
       </CardHeader>
       {task.tags.length > 0 && (
         <div className="py-2 px-2 gap-2 border-b-2 border-secondary">

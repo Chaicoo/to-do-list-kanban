@@ -88,7 +88,7 @@ export function BoardColumn({ column, tasks, isOverlay, onAddTask, onDeleteTask,
           <GripVertical />
         </Button>
         <span className="ml-auto mr-4"> {column.title}</span>
-        <TaskAddForm onAddTask={(newTask) => onAddTask(newTask, column.id)} />
+        <TaskAddForm onAddTask={(newTask: any) => onAddTask(newTask, column.id)} />
       </CardHeader>
       <ScrollArea>
         <CardContent className="flex flex-grow flex-col gap-2 p-2">
