@@ -17,28 +17,28 @@ export function ToggleTags({ onTagsChange }) {
       <ToggleGroupItem
         value="urgente"
         aria-label="Toggle urgent"
-        onClick={() => handleTagChange("urgente")}
+        onClick={() => handleTagChange("Urgente")}
       >
         Urgente
       </ToggleGroupItem>
       <ToggleGroupItem
         value="refatoracao"
         aria-label="Toggle refatoracao"
-        onClick={() => handleTagChange("refatoracao")}
+        onClick={() => handleTagChange("Refatoração")}
       >
         Refatoração
       </ToggleGroupItem>
       <ToggleGroupItem
         value="feature"
         aria-label="Toggle feature"
-        onClick={() => handleTagChange("feature")}
+        onClick={() => handleTagChange("Feature")}
       >
         Feature
       </ToggleGroupItem>
       <ToggleGroupItem
         value="fix"
         aria-label="Toggle fix"
-        onClick={() => handleTagChange("fix")}
+        onClick={() => handleTagChange("Fix")}
       >
         Fix
       </ToggleGroupItem>

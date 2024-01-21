@@ -117,13 +117,15 @@ export function TaskCard({ task, isOverlay, onDeleteTask, onDeliverTask }: TaskC
           onConfirm={handleConfirmDeliver}
         />
       </CardHeader>
-      <div className="py-2 px-2 gap-2 border-b-2 border-secondary">
-        {task.tags.map((tag) => (
-          <Badge key={tag} variant={"outline"} className="mr-2 font-semibold">
-            {tag}
-          </Badge>
-        ))}
-      </div>
+      {task.tags.length > 0 && (
+        <div className="py-2 px-2 gap-2 border-b-2 border-secondary">
+          {task.tags.map((tag) => (
+            <Badge key={tag} variant={"outline"} className="mr-2 font-semibold">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      )}
       <CardContent className="px-3 pt-3 pb-6 text-left whitespace-pre-wrap">
         {task.content}
       </CardContent>
