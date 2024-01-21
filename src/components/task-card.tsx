@@ -10,6 +10,7 @@ import { ColumnId } from "./board";
 import { Trash } from "lucide-react";
 import { useState } from "react";
 import { DeleteConfirmationDialog } from "./task-delete-confirm";
+import { DeliveryConfirmationDialog } from "./task-delivery-confirm";
 
 export interface Task {
   id: UniqueIdentifier;
@@ -29,8 +30,9 @@ export interface TaskDragData {
   task: Task;
 }
 
-export function TaskCard({ task, isOverlay, onDeleteTask }: TaskCardProps) {
+export function TaskCard({ task, isOverlay, onDeleteTask, onDeliverTask }: TaskCardProps) {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const [isDeliveryDialogOpen, setIsDeliveryDialogOpen] = useState(false);
 
   const handleDeleteClick = () => {
     setIsDeleteDialogOpen(true);
@@ -43,6 +45,16 @@ export function TaskCard({ task, isOverlay, onDeleteTask }: TaskCardProps) {
 
   const handleCancelDelete = () => {
     setIsDeleteDialogOpen(false);
+  };
+
+  const handleConfirmDeliver = () => {
+    onDeliverTask(task.id);
+    setIsDeliveryDialogOpen(false);
+  };
+
+  const handleCancelDialogs = () => {
+    setIsDeleteDialogOpen(false);
+    setIsDeliveryDialogOpen(false);
   };
 
   const {
@@ -90,7 +102,7 @@ export function TaskCard({ task, isOverlay, onDeleteTask }: TaskCardProps) {
           variant={"ghost"}
           {...attributes}
           {...listeners}
-          className="p-1 text-secondary-foreground/50 -ml-2 h-auto cursor-grab"
+          className="p-1 mr-2 mt-1 text-secondary-foreground/50 -ml-2 cursor-grab"
         >
           <GripVertical />
         </Button>
@@ -98,6 +110,11 @@ export function TaskCard({ task, isOverlay, onDeleteTask }: TaskCardProps) {
           isOpen={isDeleteDialogOpen}
           onClose={handleCancelDelete}
           onConfirm={handleConfirmDelete}
+        />
+        <DeliveryConfirmationDialog
+          isOpen={isDeliveryDialogOpen}
+          onClose={handleCancelDialogs}
+          onConfirm={handleConfirmDeliver}
         />
         <Badge variant={"outline"} className="ml-auto font-semibold">
           Task

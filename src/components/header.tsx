@@ -12,7 +12,7 @@ export function Header() {
                 <span
                     className='sm:text-2xl font-bold mx-auto'
                 >
-                    Lista de tarefas Kanban
+                    To do list Kanban
                 </span>
                 <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
                     <div className='hidden md:flex  gap-2 items-center'>

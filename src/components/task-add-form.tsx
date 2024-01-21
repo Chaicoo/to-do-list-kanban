@@ -36,7 +36,7 @@ export function TaskAddForm({ onAddTask }) {
       <Dialog isOpen={isDialogOpen} onClose={closeDialog}>
         <DialogTrigger asChild>
           <span>
-            <Button variant="outline" size="icon">
+            <Button variant="outline" size="icon" className="text-blue-400 cursor-pointer">
               <PlusIcon />
             </Button>
           </span>
