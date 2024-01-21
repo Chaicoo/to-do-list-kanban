@@ -1,4 +1,4 @@
-import { Button } from "./button"
+import { Button } from "./ui/button"
 import {
     Sheet,
     SheetClose,
@@ -8,7 +8,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "./sheet"
+} from "./ui/sheet"
 import { GithubIcon, LinkedinIcon, MailIcon, Menu } from "lucide-react"
 import Link from "next/link"
 import { ModeToggle } from "./mode-theme-togle"
