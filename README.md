@@ -44,7 +44,8 @@ git clone https://github.com/Chaicoo/to-do-list-kanban.git
 
 ```bash
 cd to-do-list-kanban
-npm some-command-to-run
+npm install
+npm run dev
 ```
 
 <h2 id="contribute">📫 Contribute</h2>
